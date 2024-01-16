@@ -10,6 +10,7 @@ const Greeting = () => {
     fetch('http://localhost:3000/api/greetings/random_greeting')
       .then((response) => response.json())
       .then((data) => {
+        console.log('Data:', data);
         dispatch(setGreeting(data.greeting));
       })
       .catch((error) => console.error('Error fetching random greeting:', error));
